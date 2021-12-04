@@ -1,6 +1,8 @@
 package com.wundermobility.test.carfleet.ui.viewmodel
 
 import android.util.Log
+import android.view.View
+import androidx.databinding.BindingAdapter
 import androidx.lifecycle.MutableLiveData
 import com.wundermobility.test.carfleet.CarRepository
 import com.wundermobility.test.carfleet.model.CarDetail
