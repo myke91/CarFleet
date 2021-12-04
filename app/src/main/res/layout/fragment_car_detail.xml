@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.wundermobility.test.carfleet.ui.viewmodel.CarDetailViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+<!--            <FrameLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:visibility="@{viewModel.isLoading ? View.GONE : View.VISIBLE}"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                android:background="@android:color/darker_gray">-->
+
+<!--                <ProgressBar-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:indeterminateTint="@color/purple_200" />-->
+<!--            </FrameLayout>-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/car_image"
+                    android:layout_width="200dp"
+                    android:layout_height="250dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/vehicle_image"
+                    android:src="@mipmap/ic_launcher" />
+
+                <LinearLayout
+                    style="@style/Theme.CarFleet.DetailItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/Theme.CarFleet.DetailLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/car_title" />
+
+                    <TextView
+                        android:id="@+id/car_title"
+                        style="@style/Theme.CarFleet.DetailText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewModel.car.title}" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/Theme.CarFleet.DetailItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/Theme.CarFleet.DetailLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/clean" />
+
+                    <CheckBox
+                        android:id="@+id/is_clean"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:checked="@{viewModel.car.clean}"
+                        android:clickable="false" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/Theme.CarFleet.DetailItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/Theme.CarFleet.DetailLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/damaged" />
+
+                    <CheckBox
+                        android:id="@+id/is_damaged"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:checked="@{viewModel.car.damaged}"
+                        android:clickable="false" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/Theme.CarFleet.DetailItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/Theme.CarFleet.DetailLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/license_plate" />
+
+                    <TextView
+                        android:id="@+id/license_plate"
+                        style="@style/Theme.CarFleet.DetailText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewModel.car.licencePlate}" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/Theme.CarFleet.DetailItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/Theme.CarFleet.DetailLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/fuel_level" />
+
+                    <TextView
+                        android:id="@+id/fuel_level"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{Integer.toString(viewModel.car.fuelLevel)}" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/Theme.CarFleet.DetailItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/Theme.CarFleet.DetailLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/vehicle_state" />
+
+                    <TextView
+                        android:id="@+id/vehicle_state_id"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{Integer.toString(viewModel.car.vehicleStateId)}" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/Theme.CarFleet.DetailItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/Theme.CarFleet.DetailLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/hardware_id" />
+
+                    <TextView
+                        android:id="@+id/hardware_id"
+                        style="@style/Theme.CarFleet.DetailText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewModel.car.hardwareId}" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/Theme.CarFleet.DetailItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/Theme.CarFleet.DetailLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/vehicle_type" />
+
+                    <TextView
+                        android:id="@+id/vehicle_type_id"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{Integer.toString(viewModel.car.vehicleTypeId)}" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/Theme.CarFleet.DetailItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/Theme.CarFleet.DetailLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pricing_time" />
+
+                    <TextView
+                        android:id="@+id/pricing_time"
+                        style="@style/Theme.CarFleet.DetailText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewModel.car.pricingTime}" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/Theme.CarFleet.DetailItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/Theme.CarFleet.DetailLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pricing_parking" />
+
+                    <TextView
+                        android:id="@+id/pricing_parking"
+                        style="@style/Theme.CarFleet.DetailText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewModel.car.pricingParking}" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/Theme.CarFleet.DetailItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/Theme.CarFleet.DetailLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/activated_by_hardware" />
+
+                    <CheckBox
+                        android:id="@+id/is_activated_by_hardware"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:checked="@{viewModel.car.activatedByHardware}"
+                        android:clickable="false" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/Theme.CarFleet.DetailItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/Theme.CarFleet.DetailLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/location" />
+
+                    <TextView
+                        android:id="@+id/location_id"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{Integer.toString(viewModel.car.locationId)}" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/Theme.CarFleet.DetailItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/Theme.CarFleet.DetailLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/address" />
+
+                    <TextView
+                        android:id="@+id/address"
+                        style="@style/Theme.CarFleet.DetailText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewModel.car.address}" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    style="@style/Theme.CarFleet.DetailItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/Theme.CarFleet.DetailLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/zip_code" />
+
+                    <TextView
+                        android:id="@+id/zip_code"
+                        style="@style/Theme.CarFleet.DetailText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewModel.car.zipCode}" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    style="@style/Theme.CarFleet.DetailItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/Theme.CarFleet.DetailLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/city" />
+
+                    <TextView
+                        android:id="@+id/city"
+                        style="@style/Theme.CarFleet.DetailText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewModel.car.city}" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/Theme.CarFleet.DetailItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/Theme.CarFleet.DetailLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/reservation_state" />
+
+                    <TextView
+                        android:id="@+id/reservation_state"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{Integer.toString(viewModel.car.reservationState)}" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/Theme.CarFleet.DetailItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/Theme.CarFleet.DetailLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/damage_description" />
+
+                    <TextView
+                        android:id="@+id/damage_description"
+                        style="@style/Theme.CarFleet.DetailText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewModel.car.damageDescription}" />
+                </LinearLayout>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:onClick="@{() -> viewModel.rentCar()}"
+                    android:text="@string/quick_rent" />
+
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

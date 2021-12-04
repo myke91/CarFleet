@@ -13,4 +13,26 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="Theme.CarFleet.DetailItem">
+        <item name="android:layout_gravity">start</item>
+        <item name="android:gravity">start</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:background">@drawable/car_detail_item</item>
+        <item name="android:layout_marginBottom">8dp</item>
+    </style>
+
+
+    <style name="Theme.CarFleet.DetailLabel">
+        <item name="android:textColor">@color/car_detail_label</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="Theme.CarFleet.DetailText">
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_gravity">start</item>
+        <item name="android:gravity">start</item>
+    </style>
 </resources>

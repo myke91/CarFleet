@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">CarFleet</string>
+    <string name="vehicle_image">vehicle image</string>
+    <string name="quick_rent">QUICK RENT</string>
+    <string name="car_title">Car Title</string>
+    <string name="clean">Clean?</string>
+    <string name="damaged">Damaged?</string>
+    <string name="license_plate">License Plate</string>
+    <string name="hardware_id">Hardware ID</string>
+    <string name="vehicle_type">Vehicle Type</string>
+    <string name="vehicle_state">Vehicle State</string>
+    <string name="fuel_level">Fuel Level</string>
+    <string name="pricing_time">Pricing Time</string>
+    <string name="pricing_parking">Pricing Parking</string>
+    <string name="activated_by_hardware">Activated by hardware?</string>
+    <string name="location">Location</string>
+    <string name="address">Address</string>
+    <string name="zip_code">Zip Code</string>
+    <string name="city">City</string>
+    <string name="reservation_state">Reservation State</string>
+    <string name="damage_description">Damage Description</string>
+    <string name="ok">OKAY</string>
+    <string name="quick_rent_success">Quick rental successfully completed!</string>
 </resources>
