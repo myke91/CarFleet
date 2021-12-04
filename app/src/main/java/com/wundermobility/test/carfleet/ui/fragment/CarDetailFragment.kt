@@ -2,14 +2,10 @@ package com.wundermobility.test.carfleet.ui.fragment
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.Observer
-import com.google.android.datatransport.runtime.backends.BackendResponse.ok
 import com.squareup.picasso.Picasso
 import com.wundermobility.test.carfleet.R
 import com.wundermobility.test.carfleet.databinding.FragmentCarDetailBinding
@@ -58,12 +54,12 @@ class CarDetailFragment : BaseFragment() {
         })
 
         viewModel.errorMessage.observe(viewLifecycleOwner, Observer {
-            showDialog(it)
+            showDialog(it, null)
         })
     }
 
     private fun showRentalStatus(){
-        showDialog(R.string.app_name)
+        showDialog(getString(R.string.quick_rent_success), null)
     }
 
     companion object {
